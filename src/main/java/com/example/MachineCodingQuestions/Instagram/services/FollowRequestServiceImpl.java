@@ -10,20 +10,16 @@ import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class FollowRequestServiceImpl implements FollowRequestService {
-    ReentrantLock lock=new ReentrantLock();
 
     @Override
-    public void createFollowRequest(Profile sender, Profile receiver) {
+    public void createFollowRequest(Profile sender, Profile receiver) throws Exception {
         if(checkIfPresent(sender,receiver)){
             throw new Exception("follow request already present");
         }
-        lock.lock();
-        if(checkIfPresent(sender,receiver)){
             FollowRequest followRequest=new FollowRequest(sender,receiver);
             receiver.getFollowRequests().add(followRequest);
             followRequest.sendNotification();
-        }
-        lock.unlock();
+
     }
 
     @Override

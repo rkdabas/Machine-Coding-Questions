@@ -24,4 +24,13 @@ public class FollowRequest {
     public void sendNotification(){
         followRequestState.notifyUser(this);
     }
+    
+    @Override
+    public String toString() {
+        return "FollowRequest{" +
+                "sender=" + sender.getId() +
+                ", receiver=" + receiver.getId() +
+                ", state=" + (followRequestState != null ? followRequestState.getClass().getSimpleName() : "null") +
+                '}';
+    }
 }

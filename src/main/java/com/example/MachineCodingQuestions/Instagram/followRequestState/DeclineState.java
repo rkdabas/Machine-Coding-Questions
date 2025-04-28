@@ -10,6 +10,6 @@ public class DeclineState extends State{
 
     @Override
     public void notifyUser(FollowRequest followRequest){
-        notificationService.sendNotification("Your follow request is accepted: ",followRequest.getSender());
+        notificationService.sendNotification("Your follow request is declined: ",followRequest.getSender());
     }
 }

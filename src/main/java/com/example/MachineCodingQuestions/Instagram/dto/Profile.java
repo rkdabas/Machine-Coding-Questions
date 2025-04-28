@@ -35,4 +35,12 @@ public class Profile {
         posts=new ArrayList<>();
         followRequests=new ArrayList<>();
     }
+    
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
