@@ -18,6 +18,10 @@ public class FollowRequest {
     public FollowRequest(Profile sender,Profile receiver){
         this.sender=sender;
         this.receiver=receiver;
-        followRequestState=new HoldState();
+        followRequestState=HoldState.holdState;
+    }
+
+    public void sendNotification(){
+        followRequestState.notifyUser(this);
     }
 }

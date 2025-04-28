@@ -20,7 +20,7 @@ public class Comment {
     public Comment(String description,Profile createdBy){
         this.description=description;
         this.createdBy=createdBy;
-        comments=new ArrayList<>();
-        likes=new ArrayList<>();
+        this.comments=new ArrayList<>();
+        this.likes=new ArrayList<>();
     }
 }

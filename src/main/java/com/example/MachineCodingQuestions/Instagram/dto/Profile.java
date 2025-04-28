@@ -21,6 +21,8 @@ public class Profile {
     private Timeline timeline;
     private boolean isCelebrity;
     private LocalDateTime lastSeen;
+    private List<Post>posts;
+    private List<FollowRequest>followRequests;
 
     public Profile(String id,String email,String password){
         this.email=email;
@@ -30,5 +32,7 @@ public class Profile {
         followings=new ArrayList<>();
         timeline=new Timeline();
         isCelebrity=false;
+        posts=new ArrayList<>();
+        followRequests=new ArrayList<>();
     }
 }
